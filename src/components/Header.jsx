@@ -8,7 +8,7 @@ const Header = () => {
     { name: "All Students", path: "/students" },
   ];
   return (
-    <div className="w-full bg-background p-4 flex justify-center">
+    <div className="w-full bg-background p-4 flex justify-center border-b border-primary">
       <div className="max-w-[1400px] w-full flex justify-between text-text">
         <div className="text-primary text-3xl flex gap-1 items-center">
           <IoIosSchool size={40} />
