@@ -1,42 +1,66 @@
 import { Link } from "react-router";
 
-const UniversityCard = ({ id, name, image }) => {
+const UniversityCard = ({ id, name, image, onDelete }) => {
+  const handleDelete = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    onDelete(id);
+  };
+
+  const defaultImage = "https://via.placeholder.com/600x400?text=No+Image";
+  const displayImage = image || defaultImage;
+
   return (
-    <Link
-      to={`/campus/${id}`}
-      className="relative block w-80 rounded-sm overflow-hidden shadow-md cursor-pointer group"
-      style={{ height: 240 }}
-    >
-      {/* Image */}
-      <img
-        src={image}
-        alt={name}
-        className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-      />
-
-      {/* Sliding text background */}
-      <div
-        className="
-          absolute bottom-0 left-0 w-full
-          bg-primary
-          overflow-hidden
-          transition-[height] duration-500 ease-in-out
-          flex items-center justify-center
-          "
-        style={{ height: 60 }}
+    <div className="relative w-80 rounded-sm overflow-hidden shadow-md group">
+      <Link
+        to={`/campus/${id}`}
+        className="block w-full h-full cursor-pointer"
+        style={{ height: 240 }}
       >
-        <h2 className="text-lg font-semibold text-background transition-colors duration-500 ease-in-out group-hover:text-text">
-          {name}
-        </h2>
-      </div>
+        <img
+          src={displayImage}
+          alt={name}
+          className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
+          onError={(e) => {
+            e.target.src = defaultImage;
+          }}
+        />
 
-      {/* Expand text background on hover */}
-      <style>{`
-        a.group:hover div {
-          height: 100%;
-        }
-      `}</style>
-    </Link>
+        <div
+          className="
+            absolute bottom-0 left-0 w-full
+            bg-primary
+            overflow-hidden
+            transition-[height] duration-500 ease-in-out
+            flex items-center justify-center group-hover:bg-accent
+          "
+          style={{ height: 60 }}
+        >
+          <h2 className="text-lg font-semibold text-background transition-colors duration-500 ease-in-out group-hover:text-text">
+            {name}
+          </h2>
+        </div>
+      </Link>
+
+      {/* Delete button - positioned absolutely */}
+      <button
+        onClick={handleDelete}
+        className="
+          absolute top-2 right-2 
+          bg-red-500 text-white 
+          rounded-full w-8 h-8 
+          flex items-center justify-center
+          opacity-0 group-hover:opacity-100
+          transition-opacity duration-300
+          hover:bg-red-600
+          z-10
+          cursor-pointer
+        "
+        aria-label="Delete campus"
+      >
+        ×
+      </button>
+    </div>
   );
 };
 
