@@ -77,7 +77,6 @@ const AllCampuses = () => {
       ) : (
         <div className="w-full rounded p-2">
           <UniversityGrid universities={campuses} onDelete={handleDelete} />
-          {console.log(campuses)}
         </div>
       )}
     </div>
