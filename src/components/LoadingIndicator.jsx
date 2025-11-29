@@ -1,4 +1,4 @@
-import { ClimbingBoxLoader, PacmanLoader } from "react-spinners";
+import { PacmanLoader } from "react-spinners";
 
 const LoadingIndicator = ({ loading }) => {
   return (
