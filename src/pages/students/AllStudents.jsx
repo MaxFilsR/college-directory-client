@@ -9,6 +9,7 @@ import {
   selectStudentsError,
   deleteStudent,
 } from "../../redux/studentSlice";
+import LoadingIndicator from "../../components/LoadingIndicator";
 
 const AllStudents = () => {
   const dispatch = useDispatch();
@@ -37,9 +38,8 @@ const AllStudents = () => {
 
   if (loading) {
     return (
-      <div className="text-text py-4 flex flex-col gap-4 items-center">
-        <h1 className="text-4xl font-bold text-text underline">All Students</h1>
-        <div className="text-xl">Loading students...</div>
+      <div className="text-text py-4 flex flex-col gap-4 justify-center items-center h-screen">
+        <LoadingIndicator loading={loading} />
       </div>
     );
   }
@@ -51,7 +51,7 @@ const AllStudents = () => {
         <div className="text-red-500">Error: {error}</div>
         <button
           onClick={() => dispatch(fetchAllStudents())}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="px-4 py-2 bg-primary text-background rounded hover:bg-secondary hover:text-text cursor-pointer"
         >
           Retry
         </button>
