@@ -25,7 +25,6 @@ const AllStudents = () => {
     if (window.confirm("Are you sure you want to delete this student?")) {
       try {
         await dispatch(deleteStudent(studentId)).unwrap();
-        s;
       } catch (err) {
         alert(`Failed to delete student: ${err}`);
       }
