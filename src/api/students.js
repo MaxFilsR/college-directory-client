@@ -1,5 +1,5 @@
 // Base URL for your json-server
-const API_BASE_URL = "http://localhost:8000";
+const API_BASE_URL = "http://localhost:5001/api";
 
 // Helper function to handle fetch errors
 const handleResponse = async (response) => {

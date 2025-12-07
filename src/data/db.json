@@ -1,26 +1,25 @@
 {
   "campuses": [
     {
-      "id": "6e4c",
-      "name": "New",
-      "address": "122321",
-      "description": "2",
+      "name": "Test",
+      "address": "123456",
+      "description": "test",
       "imageUrl": "",
-      "createdAt": "2025-11-29T22:02:45.140Z",
-      "updatedAt": "2025-11-29T22:02:45.140Z"
+      "updatedAt": "2025-12-02T20:08:55.546Z",
+      "id": "2827"
     }
   ],
   "students": [
     {
-      "id": "42ea",
-      "firstName": "John",
-      "lastName": "Doe",
-      "email": "test@test.com",
+      "id": "20ed",
+      "firstName": "Jhon",
+      "lastName": "doe",
+      "email": "test!te@t.com",
       "imageUrl": null,
-      "gpa": 3,
-      "campusId": null,
-      "createdAt": "2025-11-29T21:55:56.394Z",
-      "updatedAt": "2025-11-29T21:55:56.394Z"
+      "gpa": 4,
+      "campusId": 2827,
+      "createdAt": "2025-12-02T19:46:27.892Z",
+      "updatedAt": "2025-12-02T19:46:27.892Z"
     }
   ]
 }
