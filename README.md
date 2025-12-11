@@ -1,7 +1,5 @@
 # CSCI39548-asslignment-4
 
-## Overview
-
 ###
 
 ## Authors
@@ -21,4 +19,5 @@
 
 1. Run npm i in the project directory to install all important packages
 2. run npm run dev
-3. use the terminal to fid the local url for the client default is port 5173
+3. Use the terminal to find the local URL for the client default port is 5173
+4. You might have to change the backend user information to match PostgreSQL running on your local machine.
